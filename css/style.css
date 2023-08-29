@@ -1,1 +1,431 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/img/pat-back.svg');
+	background-position: center;
+	background-repeat: repeat;
+	background-size: 7%;
+  background-color: #e6fdff;
+}
+.video-container {
+    width: 100%;
+    position: relative;
+}
+.video-container .videobg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 2;
+}
+.logo{
+    z-index: 3;
+    display: flex;
+    position: absolute;
+}
+/* Just styling the content of the div, the *magic* in the previous rules */
+.video-container .caption {
+    height: 65vh;
+    z-index: 3;
+    display: grid;
+    align-items: center;
+    
+    position: relative;
+    color: #ffffff;
+    padding: 10px;
 
+}
+.top-container {
+    padding: 30px;
+    width: 100%; height: 100vh; background: #390128; color: #fff; display: flex; text-align: center; justify-content: center; align-items: center;
+}
+
+.header {
+    position: fixed;
+    display:flex;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 4;
+    padding: 0px 16px;
+    background: #0f0f0ff0;
+    color: #f1f1f1f1;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    font-size: .75rem;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    background-color: #00000090;
+    border-radius: 100px;
+    padding:10px
+}
+.typing{
+    place-self: center;
+    border-radius: 5vw;
+    border-color: black;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 15px;
+    padding-bottom: 2px;
+    background-color: #390128d0
+}
+
+
+.section {
+    height: 100vh;
+    width: 100%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.bg1 {
+background-color: #ccc;
+}
+.bg2 {
+background-color: #003131;
+color:#fff
+}
+.bg3 {
+  background-color: #61126f;
+  color:#fff;
+  }
+
+.revealUp {
+opacity: 0;
+visibility: hidden;
+}
+.spacer {
+height: auto;
+background-color: #ffffff90;
+display: grid;
+place-items: center;
+}
+
+.box1{
+  font-size: 1.25rem;
+    flex:2;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 1050px;
+}
+
+.box2{
+    flex:1;
+    height: 1020px;
+    display: grid;
+    align-items: center;
+}
+.container{
+  background-image: url('/img/pat-back.svg');
+background-position: center;
+background-repeat: repeat;
+background-size: 7%;
+  display: flex;
+  height: 1050px;
+}
+
+#player{
+  max-height: 70vh;
+}
+.future-pattern{
+  place-self: start right;
+  position: relative; 
+  width:30vh;
+  height: auto;
+}
+.top-rightdes{
+  position: absolute; 
+  z-index:3;
+  width: 350px;
+  right: 0px;
+  top: 10vh;
+}
+@media(max-width: 1000px){
+  .bg3{
+  height: 130vh;
+  }
+  .box1{
+    height: 950px;
+  }
+}
+@media(max-width: 850px){
+    .container{
+        height: 1440px;
+        flex-direction: column;
+    }
+    .box1{
+        height:1000px
+        
+    }
+    .video{
+        width:auto
+    }
+    .future-pattern{
+        width: 100px
+    }
+    .section{
+      height: 170vh;
+      font-size: 1rem;
+    }
+    .typing{
+	font-size: 1.5rem
+    }
+    .bg3{
+      height: 140vh;
+    }
+}
+h2{
+    font-size: 2.5rem;
+}
+h3{
+    font-size: 2rem;
+    margin-bottom: 0;
+
+}
+h4{
+    font-size: 1.5rem;
+    margin:0
+}
+p{
+    margin-left: 1rem;
+    margin-right: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 50px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 0px 16px;
+    background-color: #5cb85c;
+    color: white;margin: 0px;
+  }
+  
+  .modal-body {padding: 2px 16px;}
+  
+  .modal-footer {
+    padding: 0px 16px;
+    background-color: #5cb85c;
+    color: white;
+    margin:0px
+  }
+
+
+.scroll-down{
+  position: relative;
+  width: 100px;
+  height:45px;
+  margin-top:20px;
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+.txtonpic{
+  position:relative;
+  text-align: right;
+  top: 80px;
+  right: 16px;
+  z-index: 1;
+}
+.spin{
+  position: relative;
+  width: auto;
+  animation: spin 8s infinite linear;
+  bottom:100px;
+  left:50px
+}
+@-webkit-keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(1turn); }
+}
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(1turn); }
+}
+.footer{
+  width:100%;
+  height: 100vh;
+  background-color: #390128;
+  display: grid;
+  text-align: center;
+  /*#7F1431*/
+}
+.hidden{
+  opacity: 0;
+  filter:blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+.show{
+  opacity: 1;
+  filter:blur(0px);
+  transform: translateX(0);
+}
+
+.dropbtn {
+
+  font-size: 1rem;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: none;
+  padding: .5vh 1vw;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 7.5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+.text-menu{
+  padding: 3.5vh 0;
+  font-size: 1.2rem;
+}
+.items{
+  margin-inline: 20px;
+  color:#fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.items:hover{
+  text-decoration:underline
+}
+.div-green{
+  margin-left: 30vh;
+  z-index: 3;
+  background-color:hsla(180,72.88135593%,11.56862745%,0.9);
+  padding:2rem;
+  width:auto;
+  height: auto;
+  color:white
+}
+@media(max-width:900px) {
+  .text-menu{
+    display:none
+  }
+  .dropdown{
+    display: inline-block;
+  }
+  .div-green{
+    margin-left: 0%;
+  }
+}
+
+.row {
+  display: grid;
+  font-size: 1.25rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.col {
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+.carousel-control-prev, .carousel-control-next{
+  background-color: #00000090;
+}
+.banner{
+  width:80%
+}
